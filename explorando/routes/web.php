@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\funcionalidades;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Rota Raiz
 Route::get('/', function () {
     return view('pg_inicial');
 });
+
+
+//POSSIVEIS ROTAS
+//Rota verificar resultados
+Route::get('/index', [funcionalidades::class, 'index']);
+
+//Rota lista times
+Route::get('/listar_times', [funcionalidades::class, 'nome_times']);
+
+//Rota Adicionar times
+Route::get('/adicionar_times', [funcionalidades::class, 'create']);
+
 
 
